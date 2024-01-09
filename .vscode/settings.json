@@ -1,0 +1,19 @@
+{
+    "ros.distro": "humble",
+    "python.autoComplete.extraPaths": [
+        "/home/reita/ros_ws/install/test_pkg/lib/python3.10/site-packages",
+        "/home/reita/ros_ws/install/android_navigation/lib/python3.10/site-packages",
+        "/home/reita/ros_ws/install/android_localization/lib/python3.10/site-packages",
+        "/home/reita/ros_ws/install/android_bringup/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/reita/ros_ws/install/test_pkg/lib/python3.10/site-packages",
+        "/home/reita/ros_ws/install/android_navigation/lib/python3.10/site-packages",
+        "/home/reita/ros_ws/install/android_localization/lib/python3.10/site-packages",
+        "/home/reita/ros_ws/install/android_bringup/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
