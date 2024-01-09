@@ -12,9 +12,9 @@ def generate_launch_description():
 
     return LaunchDescription([
         DeclareLaunchArgument(
-            'run_on_desktop',
+            'run_on_robot',
             default_value = 'true',
-            description='weather run on desktop computer (not run on robots computer.)'
+            description='wether run on robot computer (when this parameter set "false", you can run navigation stacks on other Computer.)'
             ),
         IncludeLaunchDescription(
             condition = IfCondition(run_on_robot),
