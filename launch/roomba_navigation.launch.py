@@ -1,14 +1,23 @@
 import os
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
 from launch_ros.actions import Node
+from launch.conditions import IfCondition
+from launch.substitutions import LaunchConfiguration
 from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     nav_config_path = os.path.join(get_package_share_directory('roomba_navigation'),'config','config.yaml')
+    run_on_robot = LaunchConfiguration('run_on_robot')
 
     return LaunchDescription([
+        DeclareLaunchArgument(
+            'run_on_desktop',
+            default_value = 'true',
+            description='weather run on desktop computer (not run on robots computer.)'
+            ),
         IncludeLaunchDescription(
+            condition = IfCondition(run_on_robot),
             launch_description_source=([
                 get_package_share_directory('roomba_navigation'),
                 '/launch/roomba_bringup.launch.py'
