@@ -172,6 +172,16 @@ def generate_launch_description():
                               'use_composition': use_composition,
                               'use_respawn': use_respawn,
                               'container_name': 'nav2_container'}.items()),
+        Node(
+            ## Configure the TF of the robot to the origin of the map coordinatesf
+            condition=IfCondition(slam),
+            package='tf2_ros',
+            executable='static_transform_publisher',
+            namespace='',
+            output='screen',
+            arguments=['0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'map', 'odom']
+        )
+
     ])
 
     # Create the launch description and populate
